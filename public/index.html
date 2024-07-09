@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/tailwing-logo.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>TailwindBlog</title>
+  </head>
+  <body class="font-space">
+    <nav class="bg-white md:py-10 py-5 border-gray-200 dark:bg-gray-900">
+      <div class="mx-auto max-w-3xl px-4 xl:max-w-5xl xl:px-0 flex flex-wrap items-center justify-between">
+        <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="53.87"
+            height="43.61"
+            viewBox="344.564 330.278 111.737 91.218"
+          >
+            <defs>
+              <linearGradient
+                id="logo_svg__b"
+                x1="420.97"
+                x2="420.97"
+                y1="331.28"
+                y2="418.5"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0%" style="stop-color: #06b6d4; stop-opacity: 1"></stop>
+                <stop offset="100%" style="stop-color: #67e8f9; stop-opacity: 1"></stop>
+              </linearGradient>
+              <linearGradient
+                id="logo_svg__d"
+                x1="377.89"
+                x2="377.89"
+                y1="331.28"
+                y2="418.5"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0%" style="stop-color: #06b6d4; stop-opacity: 1"></stop>
+                <stop offset="100%" style="stop-color: #67e8f9; stop-opacity: 1"></stop>
+              </linearGradient>
+              <path id="logo_svg__a" d="M453.3 331.28v28.57l-64.66 58.65v-30.08z"></path>
+              <path id="logo_svg__c" d="M410.23 331.28v28.57l-64.67 58.65v-30.08z"></path>
+            </defs>
+            <use xlink:href="#logo_svg__a" fill="url(#logo_svg__b)"></use>
+            <use xlink:href="#logo_svg__c" fill="url(#logo_svg__d)"></use>
+          </svg>
+          <span class="text-black dark:text-white hidden h-6 text-2xl font-semibold sm:block">TailwindBlog</span>
+        </a>
+        <div class="md:block flex items-center justify-center gap-2">
+          <ul class="flex items-center justify-end gap-3 md:hidden">
+            <li class="flex items-center justify-center" onclick="toggleSearch()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                <g clip-path="url(#clip0_18_22)">
+                  <path
+                    d="M20.5046 19.378L15.3409 14.2968C16.6931 12.8277 17.5239 10.8848 17.5239 8.74675C17.5233 4.17316 13.7561 0.466064 9.10881 0.466064C4.46146 0.466064 0.694336 4.17316 0.694336 8.74675C0.694336 13.3203 4.46146 17.0274 9.10881 17.0274C11.1168 17.0274 12.9584 16.3329 14.4051 15.1782L19.5888 20.2794C19.8413 20.5283 20.2514 20.5283 20.504 20.2794C20.7571 20.0306 20.7571 19.6268 20.5046 19.378ZM9.10881 15.7534C5.17665 15.7534 1.98902 12.6164 1.98902 8.74675C1.98902 4.87707 5.17665 1.7401 9.10881 1.7401C13.041 1.7401 16.2286 4.87707 16.2286 8.74675C16.2286 12.6164 13.041 15.7534 9.10881 15.7534Z"
+                    fill="#030711"
+                    class="dark:fill-white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_18_22">
+                    <rect width="20" height="20" fill="white" transform="translate(0.694336 0.466064)" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <input
+                type="text"
+                placeholder="Search..."
+                class="h-[30px] sm:w-[100px] w-[120px] hidden ml-2 text-sm rounded-md focus:outline-none focus:ring-0"
+                id="searchInput"
+              />
+            </li>
+            <li>
+              <button id="toggleButton1" class="flex items-center justify-center w-6 h-6 rounded-full">
+                <img id="icon" src="images/moon.svg" alt="Sun Icon" class="h-6 w-6 dark:hidden" />
+                <img id="icon" src="images/sun-line.svg" alt="Moon Icon" class="h-6 w-6 hidden dark:block" />
+              </button>
+            </li>
+          </ul>
+          <button
+            data-collapse-toggle="navbar-default"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-default"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+          <ul
+            class="font-medium flex items-start flex-col md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 bg-transparent"
+          >
+            <li>
+              <a
+                href="blog.html"
+                class="block py-2 px-3 text-black-1000 font-medium rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-pink-1000 md:p-0 dark:text-white md:dark:hover:text-blue-500"
+                aria-current="page"
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a
+                href="features.html"
+                class="block py-2 px-3 text-black-1000 font-medium rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-pink-1000 md:p-0 dark:text-white md:dark:hover:text-blue-500"
+                >Tags</a
+              >
+            </li>
+            <li>
+              <a
+                href="features.html"
+                class="block py-2 px-3 text-black-1000 font-medium rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-pink-1000 md:p-0 dark:text-white md:dark:hover:text-blue-500"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a
+                href="blog.html"
+                class="block py-2 px-3 text-black-1000 font-medium rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-pink-1000 md:p-0 dark:text-white md:dark:hover:text-blue-500"
+                >About</a
+              >
+            </li>
+
+            <li class="items-center justify-center md:flex hidden !ml-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                onclick="toggleSearch1()"
+                width="21"
+                height="21"
+                viewBox="0 0 21 21"
+                fill="none"
+                class="cursor-pointer"
+              >
+                <g clip-path="url(#clip0_18_22)">
+                  <path
+                    d="M20.5046 19.378L15.3409 14.2968C16.6931 12.8277 17.5239 10.8848 17.5239 8.74675C17.5233 4.17316 13.7561 0.466064 9.10881 0.466064C4.46146 0.466064 0.694336 4.17316 0.694336 8.74675C0.694336 13.3203 4.46146 17.0274 9.10881 17.0274C11.1168 17.0274 12.9584 16.3329 14.4051 15.1782L19.5888 20.2794C19.8413 20.5283 20.2514 20.5283 20.504 20.2794C20.7571 20.0306 20.7571 19.6268 20.5046 19.378ZM9.10881 15.7534C5.17665 15.7534 1.98902 12.6164 1.98902 8.74675C1.98902 4.87707 5.17665 1.7401 9.10881 1.7401C13.041 1.7401 16.2286 4.87707 16.2286 8.74675C16.2286 12.6164 13.041 15.7534 9.10881 15.7534Z"
+                    fill="#030711"
+                    class="dark:fill-white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_18_22">
+                    <rect width="20" height="20" fill="white" transform="translate(0.694336 0.466064)" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <input
+                type="text"
+                placeholder="Search..."
+                class="h-[30px] lg:w-[200px] w-[100px] hidden ml-2 text-sm rounded-md focus:outline-none focus:ring-0"
+                id="searchInput1"
+              />
+            </li>
+            <li class="md:block hidden !ml-6">
+              <button id="toggleButton" class="flex items-center justify-center w-6 h-6 rounded-full">
+                <svg
+                  id="icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="h-6 w-6 text-black-1000dark:text-gray-100"
+                >
+                  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+                <img id="icon" src="images/sun-line.svg" alt="Moon Icon" class="h-6 w-6 hidden dark:block" />
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-----HERO-SECTION----->
+    <section class="bg-white dark:bg-black-1000">
+      <div class="mx-auto max-w-3xl px-4 xl:max-w-5xl xl:px-0">
+        <div class="pb-8 pt-6">
+          <h1
+            class="text-3xl font-extrabold leading-9 tracking-tight text-black-1000 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
+          >
+            Latest
+          </h1>
+          <p class="sm:text-lg text-sm font-normal leading-normal text-gray-1000 mt-4">
+            A blog created with Next.js and Tailwind.css
+          </p>
+        </div>
+
+        <div
+          class="border-0 border-y border-gray-2000 md:py-[60px] py-5 md:flex-row flex lg:gap-0 gap-5 flex-col items-start justify-between"
+        >
+          <div class="sm:w-[25%] w-full">
+            <span class="text-gray-1000 sm:text-base text-xs font-medium leading-normal">August 5, 2023</span>
+          </div>
+          <div class="sm:w-[75%] w-full flex flex-col items-start justify-between sm:gap-8 gap-4">
+            <div>
+              <h4 class="text-black-1000 lg:text-2xl text-base font-bold leading-normal tracking-tight dark:text-white">
+                Release of Tailwind Nextjs Starter Blog v2.0
+              </h4>
+              <ul class="flex items-center justify-start sm:gap-6 gap-4 pt-1">
+                <li>
+                  <a href="#" class="text-pink-1000 hover:text-pink-2000 text-sm font-medium leading-normal uppercase"
+                    >Next-js</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-pink-1000 hover:text-pink-2000 text-sm font-medium leading-normal uppercase"
+                    >tailwind</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-pink-1000 hover:text-pink-2000 text-sm font-medium leading-normal uppercase"
+                    >guide</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-pink-1000 hover:text-pink-2000 text-sm font-medium leading-normal uppercase"
+                    >feature</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <p class="text-gray-1000 sm:text-base text-sm font-normal sm:leading-6 leading-[18px]">
+              Release of Tailwind Nextjs Starter Blog template v2.0, refactored with Nextjs App directory and React
+              Server Components setup.Discover the new features and how to migrate from V1.
+            </p>
+            <button
+              type="button"
+              class="text-pink-1000 transition read-btn sm:text-base text-sm font-medium leading-6 capitalize flex items-center justify-start gap-4"
+            >
+              Read More
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <g clip-path="url(#clip0_18_66)">
+                  <path
+                    d="M19.8678 9.67956L15.3225 5.13417C15.1592 4.94351 14.8722 4.92128 14.6816 5.0846C14.4909 5.24788 14.4687 5.53483 14.632 5.72549C14.6472 5.74326 14.6638 5.75986 14.6816 5.77506L18.4497 9.54773H0.454523C0.203512 9.54773 0 9.75124 0 10.0023C0 10.2533 0.203512 10.4568 0.454523 10.4568H18.4497L14.6816 14.2249C14.4909 14.3882 14.4687 14.6751 14.632 14.8658C14.7953 15.0565 15.0822 15.0787 15.2729 14.9154C15.2907 14.9001 15.3073 14.8836 15.3225 14.8658L19.8679 10.3204C20.0441 10.1432 20.0441 9.85686 19.8678 9.67956Z"
+                    fill="#F472B6"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_18_66">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          class="border-0 border-b border-gray-2000 md:py-[60px] py-5 md:flex-row flex lg:gap-0 gap-5 flex-col items-start justify-between"
+        >
+          <div class="sm:w-[25%] w-full">
+            <span class="text-gray-1000 text-base font-medium leading-normal">August 7, 2021</span>
+          </div>
+          <div class="sm:w-[75%] w-full flex flex-col items-start justify-between sm:gap-8 gap-4">
+            <div>
+              <h4 class="text-black-1000 lg:text-2xl text-base font-bold leading-normal tracking-tight dark:text-white">
+                New features in v1
+              </h4>
+              <ul class="flex items-center justify-start sm:gap-6 gap-4 pt-1">
+                <li>
+                  <a href="#" class="text-pink-1000 hover:text-pink-2000 text-sm font-medium leading-normal uppercase"
+                    >Next-js</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-pink-1000 hover:text-pink-2000 text-sm font-medium leading-normal uppercase"
+                    >tailwind</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-pink-1000 hover:text-pink-2000 text-sm font-medium leading-normal uppercase"
+                    >guide</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <p class="text-gray-1000 sm:text-base text-sm font-normal sm:leading-6 leading-[18px]">
+              Release of Tailwind Nextjs Starter Blog template v2.0, refactored with Nextjs App directory and React
+              Server Components setup.Discover the new features and how to migrate from V1.
+            </p>
+            <button
+              type="button"
+              class="text-pink-1000 transition read-btn sm:text-base text-sm font-medium leading-6 capitalize flex items-center justify-start gap-4"
+            >
+              Read More
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <g clip-path="url(#clip0_18_66)">
+                  <path
+                    d="M19.8678 9.67956L15.3225 5.13417C15.1592 4.94351 14.8722 4.92128 14.6816 5.0846C14.4909 5.24788 14.4687 5.53483 14.632 5.72549C14.6472 5.74326 14.6638 5.75986 14.6816 5.77506L18.4497 9.54773H0.454523C0.203512 9.54773 0 9.75124 0 10.0023C0 10.2533 0.203512 10.4568 0.454523 10.4568H18.4497L14.6816 14.2249C14.4909 14.3882 14.4687 14.6751 14.632 14.8658C14.7953 15.0565 15.0822 15.0787 15.2729 14.9154C15.2907 14.9001 15.3073 14.8836 15.3225 14.8658L19.8679 10.3204C20.0441 10.1432 20.0441 9.85686 19.8678 9.67956Z"
+                    fill="#F472B6"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_18_66">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          class="border-0 border-b border-gray-2000 md:py-[60px] py-5 md:flex-row flex lg:gap-0 gap-5 flex-col items-start justify-between"
+        >
+          <div class="sm:w-[25%] w-full">
+            <span class="text-gray-1000 text-base font-medium leading-normal">August 7, 2021</span>
+          </div>
+          <div class="sm:w-[75%] w-full flex flex-col items-start justify-between sm:gap-8 gap-4">
+            <div>
+              <h4 class="text-black-1000 lg:text-2xl text-base font-bold leading-normal tracking-tight dark:text-white">
+                Introducing Multi-part Posts with Nested Routing
+              </h4>
+              <ul class="flex items-center justify-start sm:gap-6 gap-4 pt-1">
+                <li>
+                  <a href="#" class="text-pink-1000 hover:text-pink-2000 text-sm font-medium leading-normal uppercase"
+                    >MULTI-AUTHOR</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-pink-1000 hover:text-pink-2000 text-sm font-medium leading-normal uppercase"
+                    >NEXT-JS</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-pink-1000 hover:text-pink-2000 text-sm font-medium leading-normal uppercase"
+                    >TAILWIND</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-pink-1000 hover:text-pink-2000 text-sm font-medium leading-normal uppercase"
+                    >feature</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <p class="text-gray-1000 sm:text-base text-sm font-normal sm:leading-6 leading-[18px]">
+              Release of Tailwind Nextjs Starter Blog template v2.0, refactored with Nextjs App directory and React
+              Server Components setup.Discover the new features and how to migrate from V1.
+            </p>
+            <button
+              type="button"
+              class="text-pink-1000 transition read-btn sm:text-base text-sm font-medium leading-6 capitalize flex items-center justify-start gap-4"
+            >
+              Read More
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <g clip-path="url(#clip0_18_66)">
+                  <path
+                    d="M19.8678 9.67956L15.3225 5.13417C15.1592 4.94351 14.8722 4.92128 14.6816 5.0846C14.4909 5.24788 14.4687 5.53483 14.632 5.72549C14.6472 5.74326 14.6638 5.75986 14.6816 5.77506L18.4497 9.54773H0.454523C0.203512 9.54773 0 9.75124 0 10.0023C0 10.2533 0.203512 10.4568 0.454523 10.4568H18.4497L14.6816 14.2249C14.4909 14.3882 14.4687 14.6751 14.632 14.8658C14.7953 15.0565 15.0822 15.0787 15.2729 14.9154C15.2907 14.9001 15.3073 14.8836 15.3225 14.8658L19.8679 10.3204C20.0441 10.1432 20.0441 9.85686 19.8678 9.67956Z"
+                    fill="#F472B6"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_18_66">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          class="border-0 border-b border-gray-2000 md:py-[60px] py-5 md:flex-row flex lg:gap-0 gap-5 flex-col items-start justify-between"
+        >
+          <div class="sm:w-[25%] w-full">
+            <span class="text-gray-1000 text-base font-medium leading-normal">August 7, 2021</span>
+          </div>
+          <div class="sm:w-[75%] w-full flex flex-col items-start justify-between sm:gap-8 gap-4">
+            <div>
+              <h4 class="text-black-1000 lg:text-2xl text-base font-bold leading-normal tracking-tight dark:text-white">
+                Introducing Tailwind Nextjs Starter Blog
+              </h4>
+              <ul class="flex items-center justify-start sm:gap-6 gap-4 pt-1">
+                <li>
+                  <a href="#" class="text-pink-1000 hover:text-pink-2000 text-sm font-medium leading-normal uppercase"
+                    >Next-js</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-pink-1000 hover:text-pink-2000 text-sm font-medium leading-normal uppercase"
+                    >tailwind</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-pink-1000 hover:text-pink-2000 text-sm font-medium leading-normal uppercase"
+                    >guide</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <p class="text-gray-1000 sm:text-base text-sm font-normal sm:leading-6 leading-[18px]">
+              Release of Tailwind Nextjs Starter Blog template v2.0, refactored with Nextjs App directory and React
+              Server Components setup.Discover the new features and how to migrate from V1.
+            </p>
+            <button
+              type="button"
+              class="text-pink-1000 transition read-btn sm:text-base text-sm font-medium leading-6 capitalize flex items-center justify-start gap-4"
+            >
+              Read More
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <g clip-path="url(#clip0_18_66)">
+                  <path
+                    d="M19.8678 9.67956L15.3225 5.13417C15.1592 4.94351 14.8722 4.92128 14.6816 5.0846C14.4909 5.24788 14.4687 5.53483 14.632 5.72549C14.6472 5.74326 14.6638 5.75986 14.6816 5.77506L18.4497 9.54773H0.454523C0.203512 9.54773 0 9.75124 0 10.0023C0 10.2533 0.203512 10.4568 0.454523 10.4568H18.4497L14.6816 14.2249C14.4909 14.3882 14.4687 14.6751 14.632 14.8658C14.7953 15.0565 15.0822 15.0787 15.2729 14.9154C15.2907 14.9001 15.3073 14.8836 15.3225 14.8658L19.8679 10.3204C20.0441 10.1432 20.0441 9.85686 19.8678 9.67956Z"
+                    fill="#F472B6"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_18_66">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="border-0 md:py-[60px] py-5 md:flex-row flex lg:gap-0 gap-5 flex-col items-start justify-between">
+          <div class="sm:w-[25%] w-full">
+            <span class="text-gray-1000 text-base font-medium leading-normal">August 7, 2021</span>
+          </div>
+          <div class="sm:w-[75%] w-full flex flex-col items-start justify-between sm:gap-8 gap-4">
+            <div>
+              <h4 class="text-black-1000 lg:text-2xl text-base font-bold leading-normal tracking-tight dark:text-white">
+                Deriving the OLS Estimator
+              </h4>
+              <ul class="flex items-center justify-start sm:gap-6 gap-4 pt-1">
+                <li>
+                  <a href="#" class="text-pink-1000 hover:text-pink-2000 text-sm font-medium leading-normal uppercase"
+                    >Next-js</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-pink-1000 hover:text-pink-2000 text-sm font-medium leading-normal uppercase"
+                    >Math</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-pink-1000 hover:text-pink-2000 text-sm font-medium leading-normal uppercase"
+                    >ols</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <p class="text-gray-1000 sm:text-base text-sm font-normal sm:leading-6 leading-[18px]">
+              Release of Tailwind Nextjs Starter Blog template v2.0, refactored with Nextjs App directory and React
+              Server Components setup.Discover the new features and how to migrate from V1.
+            </p>
+            <button
+              type="button"
+              class="text-pink-1000 transition read-btn sm:text-base text-sm font-medium leading-6 capitalize flex items-center justify-start gap-4"
+            >
+              Read More
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <g clip-path="url(#clip0_18_66)">
+                  <path
+                    d="M19.8678 9.67956L15.3225 5.13417C15.1592 4.94351 14.8722 4.92128 14.6816 5.0846C14.4909 5.24788 14.4687 5.53483 14.632 5.72549C14.6472 5.74326 14.6638 5.75986 14.6816 5.77506L18.4497 9.54773H0.454523C0.203512 9.54773 0 9.75124 0 10.0023C0 10.2533 0.203512 10.4568 0.454523 10.4568H18.4497L14.6816 14.2249C14.4909 14.3882 14.4687 14.6751 14.632 14.8658C14.7953 15.0565 15.0822 15.0787 15.2729 14.9154C15.2907 14.9001 15.3073 14.8836 15.3225 14.8658L19.8679 10.3204C20.0441 10.1432 20.0441 9.85686 19.8678 9.67956Z"
+                    fill="#F472B6"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_18_66">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="flex items-center justify-end pb-14">
+          <button
+            type="button"
+            class="text-pink-1000 transition read-btn text-base font-medium leading-6 capitalize flex items-center justify-start gap-4"
+          >
+            All posts
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <g clip-path="url(#clip0_18_66)">
+                <path
+                  d="M19.8678 9.67956L15.3225 5.13417C15.1592 4.94351 14.8722 4.92128 14.6816 5.0846C14.4909 5.24788 14.4687 5.53483 14.632 5.72549C14.6472 5.74326 14.6638 5.75986 14.6816 5.77506L18.4497 9.54773H0.454523C0.203512 9.54773 0 9.75124 0 10.0023C0 10.2533 0.203512 10.4568 0.454523 10.4568H18.4497L14.6816 14.2249C14.4909 14.3882 14.4687 14.6751 14.632 14.8658C14.7953 15.0565 15.0822 15.0787 15.2729 14.9154C15.2907 14.9001 15.3073 14.8836 15.3225 14.8658L19.8679 10.3204C20.0441 10.1432 20.0441 9.85686 19.8678 9.67956Z"
+                  fill="#F472B6"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_18_66">
+                  <rect width="20" height="20" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-col items-center justify-center gap-16 md:pl-10 pl-0 pb-10">
+          <form>
+            <div class="flex items-center justify-center gap-4">
+              <input
+                type="email"
+                placeholder="Enter your email "
+                class="md:h-12 h-9 sm:w-[333px] w-[200px] placeholder:text-gray-2000 text-gray-2000 md:text-base text-sm font-semibold leading-normal border border-gray-2000 rounded-lg md:pl-7 pl-3 pr-0 py-3 bg-transparent focus:ring-0 focus:outline-none"
+              />
+              <button
+                type="button"
+                class="bg-pink-1000 hover:bg-pink-2000 md:text-base text-sm md:h-12 h-9 sm:w-28 w-[100px] leading-normal rounded-lg font-semibold text-white capitalize"
+              >
+                Sign up
+              </button>
+            </div>
+          </form>
+          <div class="flex-col flex items-center justify-between">
+            <div class="text-center flex items-center flex-col justify-center gap-3">
+              <ul class="flex items-center justify-center sm:gap-5 gap-3 social-icons">
+                <li>
+                  <a href="#"
+                    ><svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                      <g clip-path="url(#clip0_18_170)">
+                        <path
+                          d="M0.5 12.8V25.6C0.5 26.4487 0.837142 27.2627 1.43726 27.8628C2.03737 28.4629 2.85131 28.8 3.7 28.8H29.3C30.1487 28.8 30.9626 28.4629 31.5627 27.8628C32.1629 27.2627 32.5 26.4487 32.5 25.6V12.8L16.5 19.2L0.5 12.8Z"
+                          fill="#030711"
+                          class="dark:fill-white"
+                        />
+                        <path
+                          d="M3.7 3.19995C2.85131 3.19995 2.03737 3.53709 1.43726 4.13721C0.837142 4.73733 0.5 5.55126 0.5 6.39995L0.5 9.59995L16.5 16L32.5 9.59995V6.39995C32.5 5.55126 32.1629 4.73733 31.5627 4.13721C30.9626 3.53709 30.1487 3.19995 29.3 3.19995H3.7Z"
+                          fill="#030711"
+                          class="dark:fill-white"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_18_170">
+                          <rect width="32" height="32" fill="white" transform="translate(0.5)" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                      <path
+                        d="M16.5003 2.66663C14.7494 2.66663 13.0156 3.0115 11.3979 3.68157C9.7802 4.35163 8.31035 5.33375 7.07223 6.57187C4.57175 9.07235 3.16699 12.4637 3.16699 16C3.16699 21.8933 6.99366 26.8933 12.287 28.6666C12.9537 28.7733 13.167 28.36 13.167 28V25.7466C9.47366 26.5466 8.68699 23.96 8.68699 23.96C8.07366 22.4133 7.20699 22 7.20699 22C5.99366 21.1733 7.30032 21.2 7.30032 21.2C8.63366 21.2933 9.34033 22.5733 9.34033 22.5733C10.5003 24.6 12.4603 24 13.2203 23.68C13.3403 22.8133 13.687 22.2266 14.0603 21.8933C11.1003 21.56 7.99366 20.4133 7.99366 15.3333C7.99366 13.8533 8.50033 12.6666 9.36699 11.72C9.23366 11.3866 8.76699 9.99996 9.50033 8.19996C9.50033 8.19996 10.6203 7.83996 13.167 9.55996C14.2203 9.26663 15.367 9.11996 16.5003 9.11996C17.6337 9.11996 18.7803 9.26663 19.8337 9.55996C22.3803 7.83996 23.5003 8.19996 23.5003 8.19996C24.2337 9.99996 23.767 11.3866 23.6337 11.72C24.5003 12.6666 25.007 13.8533 25.007 15.3333C25.007 20.4266 21.887 21.5466 18.9137 21.88C19.3937 22.2933 19.8337 23.1066 19.8337 24.3466V28C19.8337 28.36 20.047 28.7866 20.727 28.6666C26.0203 26.88 29.8337 21.8933 29.8337 16C29.8337 14.249 29.4888 12.5152 28.8187 10.8975C28.1487 9.27984 27.1665 7.80998 25.9284 6.57187C24.6903 5.33375 23.2204 4.35163 21.6028 3.68157C19.9851 3.0115 18.2513 2.66663 16.5003 2.66663Z"
+                        fill="#030711"
+                        class="dark:fill-white"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                      <path
+                        d="M29.8337 16C29.8337 8.63996 23.8603 2.66663 16.5003 2.66663C9.14033 2.66663 3.16699 8.63996 3.16699 16C3.16699 22.4533 7.75366 27.8266 13.8337 29.0666V20H11.167V16H13.8337V12.6666C13.8337 10.0933 15.927 7.99996 18.5003 7.99996H21.8337V12H19.167C18.4337 12 17.8337 12.6 17.8337 13.3333V16H21.8337V20H17.8337V29.2666C24.567 28.6 29.8337 22.92 29.8337 16Z"
+                        fill="#030711"
+                        class="dark:fill-white"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                      <path
+                        d="M13.8337 20L20.7537 16L13.8337 12V20ZM29.247 9.55996C29.4203 10.1866 29.5403 11.0266 29.6203 12.0933C29.7137 13.16 29.7537 14.08 29.7537 14.88L29.8337 16C29.8337 18.92 29.6203 21.0666 29.247 22.44C28.9137 23.64 28.1403 24.4133 26.9403 24.7466C26.3137 24.92 25.167 25.04 23.407 25.12C21.6737 25.2133 20.087 25.2533 18.6203 25.2533L16.5003 25.3333C10.9137 25.3333 7.43366 25.12 6.06033 24.7466C4.86033 24.4133 4.08699 23.64 3.75366 22.44C3.58033 21.8133 3.46033 20.9733 3.38033 19.9066C3.28699 18.84 3.24699 17.92 3.24699 17.12L3.16699 16C3.16699 13.08 3.38033 10.9333 3.75366 9.55996C4.08699 8.35996 4.86033 7.58663 6.06033 7.25329C6.68699 7.07996 7.83366 6.95996 9.59366 6.87996C11.327 6.78663 12.9137 6.74663 14.3803 6.74663L16.5003 6.66663C22.087 6.66663 25.567 6.87996 26.9403 7.25329C28.1403 7.58663 28.9137 8.35996 29.247 9.55996Z"
+                        fill="#030711"
+                        class="dark:fill-white"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                      <path
+                        d="M25.8333 4C26.5406 4 27.2189 4.28095 27.719 4.78105C28.219 5.28115 28.5 5.95942 28.5 6.66667V25.3333C28.5 26.0406 28.219 26.7189 27.719 27.219C27.2189 27.719 26.5406 28 25.8333 28H7.16667C6.45942 28 5.78115 27.719 5.28105 27.219C4.78095 26.7189 4.5 26.0406 4.5 25.3333V6.66667C4.5 5.95942 4.78095 5.28115 5.28105 4.78105C5.78115 4.28095 6.45942 4 7.16667 4H25.8333ZM25.1667 24.6667V17.6C25.1667 16.4472 24.7087 15.3416 23.8936 14.5264C23.0784 13.7113 21.9728 13.2533 20.82 13.2533C19.6867 13.2533 18.3667 13.9467 17.7267 14.9867V13.5067H14.0067V24.6667H17.7267V18.0933C17.7267 17.0667 18.5533 16.2267 19.58 16.2267C20.0751 16.2267 20.5499 16.4233 20.8999 16.7734C21.25 17.1235 21.4467 17.5983 21.4467 18.0933V24.6667H25.1667ZM9.67333 11.4133C10.2674 11.4133 10.8372 11.1773 11.2573 10.7573C11.6773 10.3372 11.9133 9.76742 11.9133 9.17333C11.9133 7.93333 10.9133 6.92 9.67333 6.92C9.07571 6.92 8.50257 7.1574 8.07999 7.57999C7.6574 8.00257 7.42 8.57571 7.42 9.17333C7.42 10.4133 8.43333 11.4133 9.67333 11.4133ZM11.5267 24.6667V13.5067H7.83333V24.6667H11.5267Z"
+                        fill="#030711"
+                        class="dark:fill-white"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                      <path
+                        d="M30.447 8.00004C29.4204 8.46671 28.3137 8.77337 27.167 8.92004C28.3404 8.21337 29.247 7.09337 29.6737 5.74671C28.567 6.41337 27.3404 6.88004 26.047 7.14671C24.9937 6.00004 23.5137 5.33337 21.8337 5.33337C18.7004 5.33337 16.1404 7.89337 16.1404 11.0534C16.1404 11.5067 16.1937 11.9467 16.287 12.36C11.5404 12.12 7.31371 9.84004 4.50038 6.38671C4.00704 7.22671 3.72704 8.21337 3.72704 9.25337C3.72704 11.24 4.72704 13 6.27371 14C5.32704 14 4.44704 13.7334 3.67371 13.3334V13.3734C3.67371 16.1467 5.64704 18.4667 8.26038 18.9867C7.42135 19.2163 6.5405 19.2483 5.68704 19.08C6.04919 20.2167 6.75843 21.2113 7.71507 21.9239C8.67171 22.6366 9.82764 23.0316 11.0204 23.0534C8.99855 24.654 6.49237 25.5191 3.91371 25.5067C3.46038 25.5067 3.00704 25.48 2.55371 25.4267C5.08704 27.0534 8.10038 28 11.327 28C21.8337 28 27.607 19.28 27.607 11.72C27.607 11.4667 27.607 11.2267 27.5937 10.9734C28.7137 10.1734 29.6737 9.16004 30.447 8.00004Z"
+                        fill="#030711"
+                        class="dark:fill-white"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                      <path
+                        d="M10.9003 2.66663H22.1003C26.367 2.66663 29.8337 6.13329 29.8337 10.4V21.6C29.8337 23.651 29.0189 25.618 27.5686 27.0683C26.1183 28.5185 24.1513 29.3333 22.1003 29.3333H10.9003C6.63366 29.3333 3.16699 25.8666 3.16699 21.6V10.4C3.16699 8.34895 3.98175 6.38195 5.43203 4.93167C6.88231 3.48139 8.84932 2.66663 10.9003 2.66663ZM10.6337 5.33329C9.36062 5.33329 8.13972 5.83901 7.23955 6.73918C6.33937 7.63935 5.83366 8.86025 5.83366 10.1333V21.8666C5.83366 24.52 7.98033 26.6666 10.6337 26.6666H22.367C23.64 26.6666 24.8609 26.1609 25.7611 25.2607C26.6613 24.3606 27.167 23.1397 27.167 21.8666V10.1333C27.167 7.47996 25.0203 5.33329 22.367 5.33329H10.6337ZM23.5003 7.33329C23.9424 7.33329 24.3663 7.50889 24.6788 7.82145C24.9914 8.13401 25.167 8.55793 25.167 8.99996C25.167 9.44199 24.9914 9.86591 24.6788 10.1785C24.3663 10.491 23.9424 10.6666 23.5003 10.6666C23.0583 10.6666 22.6344 10.491 22.3218 10.1785C22.0093 9.86591 21.8337 9.44199 21.8337 8.99996C21.8337 8.55793 22.0093 8.13401 22.3218 7.82145C22.6344 7.50889 23.0583 7.33329 23.5003 7.33329ZM16.5003 9.33329C18.2684 9.33329 19.9641 10.0357 21.2144 11.2859C22.4646 12.5362 23.167 14.2318 23.167 16C23.167 17.7681 22.4646 19.4638 21.2144 20.714C19.9641 21.9642 18.2684 22.6666 16.5003 22.6666C14.7322 22.6666 13.0365 21.9642 11.7863 20.714C10.536 19.4638 9.83366 17.7681 9.83366 16C9.83366 14.2318 10.536 12.5362 11.7863 11.2859C13.0365 10.0357 14.7322 9.33329 16.5003 9.33329ZM16.5003 12C15.4395 12 14.422 12.4214 13.6719 13.1715C12.9218 13.9217 12.5003 14.9391 12.5003 16C12.5003 17.0608 12.9218 18.0782 13.6719 18.8284C14.422 19.5785 15.4395 20 16.5003 20C17.5612 20 18.5786 19.5785 19.3288 18.8284C20.0789 18.0782 20.5003 17.0608 20.5003 16C20.5003 14.9391 20.0789 13.9217 19.3288 13.1715C18.5786 12.4214 17.5612 12 16.5003 12Z"
+                        fill="#030711"
+                        class="dark:fill-white"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                      <path
+                        d="M24.0898 14.8314C23.952 14.7653 23.812 14.7017 23.6702 14.6409C23.4232 10.0897 20.9363 7.48417 16.7606 7.4575C16.7417 7.45738 16.7229 7.45738 16.704 7.45738C14.2064 7.45738 12.1292 8.52348 10.8507 10.4635L13.1472 12.0388C14.1023 10.5897 15.6012 10.2808 16.7051 10.2808C16.7178 10.2808 16.7306 10.2808 16.7433 10.2809C18.1182 10.2897 19.1557 10.6894 19.8272 11.469C20.3158 12.0366 20.6427 12.8208 20.8045 13.8106C19.5855 13.6035 18.2672 13.5398 16.8578 13.6206C12.8878 13.8492 10.3355 16.1646 10.5069 19.382C10.5939 21.014 11.4069 22.418 12.7962 23.3352C13.9707 24.1105 15.4835 24.4897 17.0557 24.4038C19.132 24.29 20.7608 23.4978 21.8972 22.0493C22.7602 20.9493 23.306 19.5238 23.547 17.7277C24.5365 18.3248 25.2698 19.1107 25.6748 20.0553C26.3635 21.6612 26.4037 24.3 24.2505 26.4513C22.364 28.336 20.0963 29.1513 16.6692 29.1765C12.8677 29.1483 9.99263 27.9292 8.12334 25.5528C6.37291 23.3277 5.46828 20.1137 5.43453 16C5.46828 11.8863 6.37291 8.67227 8.12334 6.44712C9.99263 4.07082 12.8676 2.85167 16.6692 2.82342C20.4983 2.85188 23.4235 4.0769 25.3643 6.46467C26.316 7.6356 27.0335 9.10813 27.5065 10.8251L30.1977 10.107C29.6243 7.9937 28.7222 6.17262 27.4945 4.66233C25.0063 1.60111 21.3673 0.0325247 16.6786 0H16.6598C11.9806 0.0324117 8.38234 1.60697 5.96504 4.67988C3.81398 7.4144 2.70439 11.2193 2.66711 15.9888L2.66699 16L2.66711 16.0112C2.70439 20.7807 3.81398 24.5857 5.96504 27.3202C8.38234 30.393 11.9806 31.9677 16.6598 32H16.6786C20.8387 31.9712 23.771 30.882 26.1867 28.4685C29.3472 25.311 29.252 21.3532 28.2103 18.9235C27.463 17.1812 26.0382 15.766 24.0898 14.8314ZM16.9071 21.5845C15.1671 21.6825 13.3594 20.9015 13.2703 19.2287C13.2042 17.9883 14.153 16.6043 17.0139 16.4395C17.3415 16.4206 17.663 16.4113 17.9788 16.4113C19.018 16.4113 19.9902 16.5123 20.874 16.7055C20.5443 20.8225 18.6107 21.491 16.9071 21.5845Z"
+                        fill="#030711"
+                        class="dark:fill-white"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+              <ul class="flex items-center justify-center gap-2">
+                <li><a href="#" class="text-gray-2000 text-sm font-normal leading-6">Tails azimuth</a></li>
+                <li class="text-gray-2000">.</li>
+                <li class="text-gray-2000 text-sm font-normal leading-6">© 2024</li>
+                <li class="text-gray-2000">.</li>
+                <li><a href="#" class="text-gray-2000 text-sm font-normal leading-6"> Next.js Starter Blog</a></li>
+              </ul>
+              <p class="text-gray-2000 text-sm font-normal leading-6">Tailwind Nextjs Theme</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    <script>
+      const toggleButton = document.getElementById("toggleButton");
+      const sunIcon = document.getElementById("sunIcon");
+      const moonIcon = document.getElementById("moonIcon");
+
+      toggleButton.addEventListener("click", function () {
+        const isDarkMode = document.body.classList.toggle("dark");
+        if (isDarkMode) {
+          sunIcon.classList.add("hidden");
+          moonIcon.classList.remove("hidden");
+        } else {
+          sunIcon.classList.remove("hidden");
+          moonIcon.classList.add("hidden");
+        }
+      });
+      ///-----SECOUND-ID-----///
+      const toggleButton1 = document.getElementById("toggleButton1");
+      const sunIcon1 = document.getElementById("sunIcon");
+      const moonIcon1 = document.getElementById("moonIcon");
+
+      toggleButton1.addEventListener("click", function () {
+        const isDarkMode = document.body.classList.toggle("dark");
+        if (isDarkMode) {
+          sunIcon1.classList.add("hidden");
+          moonIcon1.classList.remove("hidden");
+        } else {
+          sunIcon1.classList.remove("hidden");
+          moonIcon1.classList.add("hidden");
+        }
+      });
+      ///-----SECOUND-ID-END-----///
+      function toggleSearch() {
+        var searchInput = document.getElementById("searchInput");
+        if (searchInput.style.display === "none") {
+          searchInput.style.display = "block";
+          searchInput.focus(); // Optional: automatically focus on the input field when shown
+        } else {
+          searchInput.style.display = "none";
+        }
+      }
+      function toggleSearch1() {
+        var searchInput = document.getElementById("searchInput1");
+        if (searchInput.style.display === "none") {
+          searchInput.style.display = "block";
+          searchInput.focus(); // Optional: automatically focus on the input field when shown
+        } else {
+          searchInput.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

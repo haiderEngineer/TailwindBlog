@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.read-btn:hover {
+  color: #ff0084;
+}
+.read-btn:hover svg path {
+  fill: #ff0084;
+}
+.social-icons svg:hover path {
+  fill: #ff0084;
+}
+.blog-read:hover svg path {
+  fill: #3dc6e0 !important;
+}
+.swiper-pagination-bullet {
+  background-color: #d9d9d9;
+  opacity: 100%;
+}
+.swiper-pagination-bullet-active {
+  background: #f472b6;
+}
